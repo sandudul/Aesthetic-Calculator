@@ -5,6 +5,16 @@ This project combines **Python (Flask)** with **Bootstrap** and **JavaScript** t
 
 ---
 
+Here’s a quick look at the calculator in action:
+
+<p align="center>
+  
+![Preview Video](designs/AestheticCalculator.gif) 
+  
+</p>
+  
+---
+
 ## About This Project
 
 The goal of this project was to make a **basic calculator** feel modern and engaging.  
@@ -33,14 +43,6 @@ This app is also a practical example of combining **Flask backend** with respons
 - Keyboard event integration for web apps  
 - CSS animations and gradient styling  
 - Error handling in user-facing applications  
-
----
-
-## Preview
-
-Here’s a quick look at the calculator in action:
-
-![Preview Video](designs/AestheticCalculator.gif)  
 
 ---
 
