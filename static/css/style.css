@@ -1,0 +1,289 @@
+:root {
+    /* Monochrome palette */
+    --bg-primary: #000000; /* Black background */
+    --bg-secondary: #1a1a1a; /* Dark gray container background */
+    --text-primary: #ffffff; /* White text */
+    --text-secondary: #cccccc; /* Light gray text */
+    --shadow-soft: 0 10px 25px rgba(255, 255, 255, 0.05);
+    --shadow-medium: 0 20px 40px rgba(255, 255, 255, 0.1);
+    --border-radius: 20px;
+    --border-radius-small: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Calculator container */
+.calculator-container {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.calculator-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.calculator-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 2rem;
+    text-shadow: none; /* Remove shadow for cleaner look */
+    margin: 0;
+}
+
+/* Main calculator */
+.calculator {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: none; /* Remove blur */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Display styles */
+.display-container {
+    background: #333333; /* dark gray */
+    border-radius: var(--border-radius-small);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.display-secondary {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: right;
+    margin-bottom: 0.25rem;
+    min-height: 1rem;
+    font-weight: 400;
+}
+
+.display-primary {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: right;
+    word-break: break-all;
+    transition: var(--transition);
+}
+
+/* Button grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+/* Base button styles */
+.btn {
+    border: none;
+    border-radius: var(--border-radius-small);
+    font-size: 1.125rem;
+    font-weight: 500;
+    height: 60px;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    background: #222222;
+    color: var(--text-primary);
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: var(--transition);
+}
+
+.btn:hover:before {
+    left: 100%;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Number buttons */
+.btn-number {
+    background: #222222;
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-number:hover {
+    background: #444444;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Zero button spans two columns */
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* Operator buttons */
+.btn-operator {
+    background: #ffffff; /* White buttons */
+    color: #000000; /* Black text */
+    font-weight: 600;
+    border: 1px solid #ccc;
+}
+
+.btn-operator:hover {
+    background: #e6e6e6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Function buttons (AC, C, backspace) */
+.btn-function {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 600;
+    border: 1px solid #ccc;
+}
+
+.btn-function:hover {
+    background: #e6e6e6;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Equals button */
+.btn-equals {
+    background: var(--text-primary); /* White text-primary is #fff, but we want black for bg */
+    background: #000000; /* Black bg */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: 1px solid #444;
+}
+
+.btn-equals:hover {
+    background: #222222;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.calculator-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #ffffff;
+}
+
+.calculator-footer small {
+    color: rgb(255, 255, 255);
+    font-size: 0.75rem;
+}
+
+/* Active state animation */
+.btn-active {
+    animation: pulse 0.2s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* Error state */
+.display-error {
+    color: #ff4c4c !important;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator-container {
+        padding: 1rem;
+    }
+    
+    .calculator {
+        padding: 1.5rem;
+    }
+    
+    .calculator-title {
+        font-size: 1.5rem;
+    }
+    
+    .display-primary {
+        font-size: 1.75rem;
+    }
+    
+    .btn {
+        height: 55px;
+        font-size: 1rem;
+    }
+    
+    .btn-equals {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .button-grid {
+        gap: 0.5rem;
+    }
+    
+    .btn {
+        height: 50px;
+        font-size: 0.875rem;
+    }
+    
+    .display-primary {
+        font-size: 1.5rem;
+    }
+}
+
+/* Accessibility improvements */
+.btn:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
