@@ -7,12 +7,8 @@ This project combines **Python (Flask)** with **Bootstrap** and **JavaScript** t
 
 Here’s a quick look at the calculator in action:
 
-<p align="center>
-  
 ![Preview Video](designs/AestheticCalculator.gif) 
-  
-</p>
-  
+
 ---
 
 ## About This Project
