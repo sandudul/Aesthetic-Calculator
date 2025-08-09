@@ -40,7 +40,7 @@ This app is also a practical example of combining **Flask backend** with respons
 
 Here’s a quick look at the calculator in action:
 
-![Preview Video](preview/designs/AestheticCalculator.gif)  
+![Preview Video](designs/AestheticCalculator.gif)  
 
 ---
 
