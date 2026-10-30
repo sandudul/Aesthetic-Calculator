@@ -42,12 +42,13 @@ This app is also a practical example of combining **Flask backend** with respons
 
 ---
 
-## Technologies & Tools Used
+## 🛠️ Technologies & Tools Used
 
-- **Python (Flask)** – Backend server  
-- **Bootstrap** – Responsive design framework  
-- **JavaScript** – Calculator logic & keyboard support  
-- **HTML5 & CSS3** – Structure and aesthetic styling  
+* **Python (Flask)** — Backend server
+* **Bootstrap** — Responsive design framework
+* **JavaScript** — Calculator logic & keyboard support
+* **HTML5 & CSS3** — Structure and aesthetic styling
+
 
 ---
 
